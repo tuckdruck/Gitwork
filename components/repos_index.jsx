@@ -15,11 +15,23 @@ class ReposIndex extends React.Component {
   }
 
   render() {
-    const repoIndexItems = this.props.repos.map((repo, i) => {
-      return(<RepoIndexItem key={i} repo={repo}/>);
-    });
+    const repoIndexItems = [];
+    for (let i = 0; i < this.props.repos.length; i += 2) {
+      let nextRepo = "";
+      if (this.props.repos[i + 1]) {
+        nextRepo = (<RepoIndexItem key={i + 1} repo={this.props.repos[i + 1]}/>)
+      }
+      repoIndexItems.push(
+        <div className="repos-row" key={i}>
+          <RepoIndexItem key={i} repo={this.props.repos[i]}/>
+          {nextRepo}
+        </div>
+      );
+    }
+
     return(
       <div className="repos">
+        <h2>Repositories</h2>
         {repoIndexItems}
       </div>
     );

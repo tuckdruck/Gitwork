@@ -28,7 +28,7 @@ export const logIn = (user) => {
   return (dispatch) => {
     return SessionAPIUtil.logIn(user)
       .then((res) => {
-        if (!res.ok) { throw new Error("Invalid username/access token combination."); }
+        if (!res.ok) { throw new Error("Invalid username/API token combination."); }
         const path = res.url.split("/");
         const username = path[path.length - 1];
         return res.text();

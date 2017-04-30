@@ -1,5 +1,7 @@
 const reposFormatter = repos => {
-  return Object.keys(repos).map((id) => { return repos[id] });
+  const arr = [];
+  Object.keys(repos).forEach((id) => { arr.unshift(repos[id]) });
+  return arr;
 }
 
 export default reposFormatter;
