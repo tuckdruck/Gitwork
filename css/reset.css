@@ -1,0 +1,29 @@
+div, form, label, input, button, ul, li, h1 {
+  color: inherit;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-weight: inherit;
+  list-style: none;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  webkit-appearance: none;
+  text-align: left;
+}
+
+body {
+  margin: 0;
+  color: black;
+  background: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+input:focus, button:focus {
+  outline-width: 0;
+}

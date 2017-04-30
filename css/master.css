@@ -1,0 +1,94 @@
+header {
+  background: #24292e;
+  color: white;
+  display: block;
+  padding-top: 18px;
+  padding-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+img {
+  height: 35px;
+}
+
+nav {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  font-weight: bold;
+  font-size: 23px;
+  display: block;
+  margin-left: 30%;
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+button {
+  font-weight: bold;
+}
+
+main.landing {
+  display: flex;
+  color: white;
+  height: 100vh;
+  padding: 11vh 0vh;
+  width: 88%;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+main.landing div {
+  padding: 30px;
+  width: 65%;
+}
+
+main.landing form {
+  padding: 14%;
+}
+
+main.landing h1 {
+  font-size: 80px;
+  display: block;
+}
+
+p {
+  color: rgba(255,255,255,0.6);
+  font-size: 25px;
+  line-height: 40px;
+}
+
+main.landing-container {
+  background: #24292e;
+}
+input {
+  background: white;
+  color: #757575;
+}
+
+input, button.login {
+  display: block;
+  width: 100%;
+  font-size: 20px;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  border-radius: 7px;
+  box-sizing: border-box;
+}
+
+button.login {
+  background: #d25a08;
+  text-align: center;
+  font-weight: bold;
+}
+
+button:hover {
+  cursor: pointer;
+}
