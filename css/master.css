@@ -12,7 +12,7 @@ img {
 }
 
 nav {
-  width: 60%;
+  width: 57%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -59,7 +59,7 @@ main.landing h1 {
   display: block;
 }
 
-p {
+main.landing p {
   color: rgba(255,255,255,0.6);
   font-size: 25px;
   line-height: 40px;
@@ -91,4 +91,48 @@ button.login {
 
 button:hover {
   cursor: pointer;
+}
+
+div.profile-main {
+  display: flex;
+  width: 57%;
+  margin: 0 auto;
+  margin-top: 26px;
+}
+
+section.profile-sidebar {
+  margin-right: 25px;
+  width: 230px;
+}
+
+img.avatar {
+  height: 230px;
+  width: 230px;
+  border-radius: 6px;
+}
+
+section.profile-sidebar h2 {
+  font-size: 26px;
+  margin-top: 12px;
+  font-weight: bold;
+}
+
+section.profile-sidebar h3 {
+  font-size: 20px;
+  color: #666;
+}
+
+section.profile-sidebar p {
+  color: #6a737d;
+  line-height: 21px;
+  display: block;
+  margin-bottom: 14px;
+}
+
+section.profile-sidebar span {
+  display: block;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-top: 1px solid #eaecef;
+  border-bottom: 1px solid #eaecef;
 }

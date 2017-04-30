@@ -31,15 +31,15 @@ export const logIn = (user) => {
         if (!res.ok) { throw new Error("Invalid username/access token combination."); }
         const path = res.url.split("/");
         const username = path[path.length - 1];
-        return dispatch(receiveUser({ username: username, token: user.token}));
+        return res.text();
+      })
+      .then((json) => {
+        const signedInUser = JSON.parse(json);
+        signedInUser["token"] = user.token;
+        return dispatch(receiveUser(signedInUser));
       })
       .catch((errors) => {
         return dispatch(receiveErrors([errors.message]));
       })
   }
 }
-
-// if(response.ok) {
-//   return response.blob();
-// }
-// throw new Error('Network response was not ok.');
