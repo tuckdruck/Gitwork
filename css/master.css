@@ -13,7 +13,6 @@ img {
 
 main.main {
   height: 100vh;
-  /*background: white;*/
 }
 
 nav {
@@ -52,25 +51,13 @@ main.landing {
 }
 
 main.landing div {
-  /*padding-top: 30px;*/
   box-sizing: border-box;
-  /*width: 65%;*/
 }
 
 main.landing div.login {
   position: relative;
   min-width: 384px;
   margin-left: 10%;
-}
-
-main.landing div.promo {
-  /*width: 40%;*/
-  /*flex: 3;*/
-}
-
-main.landing form {
-  /*padding-left: 14%;*/
-  /*padding-right: 14%;*/
 }
 
 main.landing h1 {
@@ -86,7 +73,7 @@ main.landing p {
 
 main.landing-container {
   background: #24292e;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 input {
@@ -187,7 +174,6 @@ div.repos-row {
 }
 
 div.repo-thumb {
-  /*flex: 1;*/
   width: 405px;
   border: 1px solid rgb(209, 213, 218);
   padding: 20px 17px;
@@ -268,7 +254,6 @@ a:hover {
 @media all and (max-width: 1500px) {
   div.profile-main {
     width: 90%;
-    /*margin: 0 auto;*/
   }
 
   header nav {
@@ -304,7 +289,6 @@ a:hover {
   }
 
   main.landing div.login {
-    /*margin-left: 0px;*/
     width: 360px;
     margin: 0 auto;
     margin-top: 50px;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const RepoIndexItem = ({ repo }) => {
   let description = repo.description;
@@ -10,7 +11,7 @@ const RepoIndexItem = ({ repo }) => {
   if (!repo.language) { language = ""; }
   return(
     <div className="repo-thumb" key={repo.id}>
-      <h1>{repo.name}</h1>
+      <h1><Link to={`repos/${repo.id}`}>{repo.name}</Link></h1>
       <p className="repo-thumb description">{description}</p>
       {language}
       <span>

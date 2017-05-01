@@ -6,18 +6,25 @@ import Footer from './footer';
 
 import { connect } from 'react-redux';
 
-const App = ({ children, loggedIn }) => {
-  let mainContent = loggedIn ? (<ProfilePage />) : (<SignIn />);
-  let footer = loggedIn ? (<Footer />) : "";
-  if (loggedIn) {
-
+const App = ({ children, loggedIn, location }) => {
+  if (loggedIn && location.pathname === "/") {
+    return(<ProfilePage />);
   }
-  return(
-    <main className="main">
-      {mainContent}
-      {footer}
-    </main>
-  );
+  else if (loggedIn) {
+    return(children);
+  }
+  else {
+    return(<SignIn />)
+  }
+  // let mainContent = loggedIn ? "" : (<SignIn />);
+  // let footer = loggedIn ? (<Footer />) : "";
+  //
+  // return(
+  //   <main className="main">
+  //     {mainContent}
+  //     {footer}
+  //   </main>
+  // );
 };
 
 const mapStateToProps = (state) => {
@@ -27,3 +34,11 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, null)(App);
+//
+// const App = (props) => {
+//   const { loggedIn, location, children, logout } = props;
+//
+//   if (loggedIn && rootUrl(location)) { return(<HomePageSignedIn />); }
+//   else if (rootUrl(location)) { return(<HomePageSignedOut />); }
+//   else { return(<div>{header(location)}{children}<Footer /></div>); }
+// };
