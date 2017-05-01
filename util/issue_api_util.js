@@ -9,10 +9,6 @@ export const fetchIssues = (user, repo) => {
 };
 
 export const updateIssue = (user, issue, params) => {
-  let data = "";
-  Object.keys(params).forEach((key) => {
-    data += key + "=" + params[key];
-  });
   const headers = { 'Authorization': 'Basic ' + `${user.token}` };
   const repositoryUrlArr = issue.repository_url.split("/");
   const repository = repositoryUrlArr[repositoryUrlArr.length - 1];
@@ -22,5 +18,17 @@ export const updateIssue = (user, issue, params) => {
     method: "PATCH",
     headers: headers,
     body: JSON.stringify(params)
+  });
+};
+
+export const createIssue = (user, issue, repo) => {
+  debugger
+  const headers = { 'Authorization': 'Basic ' + `${user.token}` };
+  const url = `https://api.github.com/repos/${user.login}/${repo.name}/issues`
+
+  return fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: JSON.stringify(issue)
   });
 };

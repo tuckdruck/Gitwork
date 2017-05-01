@@ -2,12 +2,17 @@ import React from 'react';
 import Header from './header';
 import IssuesIndex from './issues_index';
 import { connect } from 'react-redux';
+import IssueModal from './issue_modal';
+import { Redirect } from 'react-router-dom';
 
 const RepoShowPage = ({ user, repo }) => {
+  if (!user) {
+    return(<Redirect to="/" />);
+  }
   return(
     <div>
       <Header />
-      <div>
+      <div className="profile-main">
         <h1>
 
           <svg width="12px" height="16px" viewBox="0 0 12 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
@@ -28,6 +33,7 @@ const RepoShowPage = ({ user, repo }) => {
          <i className="fa fa-star" aria-hidden="true"></i> {repo.stargazers_count}
         <div>
           <h2>Issues</h2>
+          <IssueModal repo={repo}/>
           <IssuesIndex repo={repo}/>
         </div>
       </div>

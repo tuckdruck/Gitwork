@@ -39,3 +39,14 @@ export const updateIssue = (user, issue, params) => {
       });
   };
 };
+
+export const createIssue = (user, issue, repo) => {
+  return (dispatch) => {
+    return IssueAPIUtil.createIssue(user, issue, repo)
+      .then((res) => { return res.text() })
+      .then((json) => {
+        const createdIssue = JSON.parse(json);
+        return dispatch(receiveIssue(createdIssue));
+      })
+  }
+};
