@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateIssue } from '../actions/issue_actions';
+import StatusIcon from './status_icon';
 
 class IssueBody extends React.Component {
 
@@ -23,7 +24,7 @@ class IssueBody extends React.Component {
 
   toggleIssueButton() {
     const buttonText = this.props.issue.state === "open" ? "Close issue" : "Reopen issue";
-    return(<button onClick={this.toggleIssueState}>{buttonText}</button>)
+    return(<button className="toggle-state" onClick={this.toggleIssueState}>{buttonText}</button>)
   }
 
 
@@ -71,54 +72,57 @@ class IssueBody extends React.Component {
 
   render() {
     let title;
-    let openedText = `opened ${this.date()} by ${this.props.user.login}`;
-    let body;
+    let openedText = (<span>opened {this.date()} by {this.props.user.login}</span>);
+    let bodyText;
 
     if (this.state.editTitle) {
       title = (
-        <div>
-        <form>
-          <input type="text" value={this.state.title} onChange={this.update("title")} />
-          <button onClick={this.updateIssueTitle}>Save</button>
-        </form>
-          <button onClick={this.toggleEditTitle}>Cancel</button>
+        <div className="issue title-open">
+          <form className="issue title">
+            <input type="text" value={this.state.title} onChange={this.update("title")} />
+            <button onClick={this.updateIssueTitle}>Save</button>
+          </form>
+            <button className="cancel" onClick={this.toggleEditTitle}>Cancel</button>
         </div>
       );
     }
     else {
       title = (
-        <div>
+        <div className="issue title">
           <button onClick={this.props.toggleIssue}>{this.props.issue.title}</button>
-          <button onClick={this.toggleEditTitle}>Edit title</button>
+          <button className="edit" onClick={this.toggleEditTitle}>Edit title</button>
         </div>
       );
     }
 
     if (this.state.editBody) {
-      body = (
-        <div>
+      bodyText = (
+        <div className="issue-body">
           <form>
             <textarea onChange={this.update("body")} value={this.state.body} />
-            <button onClick={this.updateIssueBody}>Update</button>
+            <button className="update" onClick={this.updateIssueBody}>Update</button>
           </form>
-          <button onClick={this.toggleEditBody}>Cancel</button>
+          <button className="cancel" onClick={this.toggleEditBody}>Cancel</button>
         </div>
       );
     }
     else {
-      body = (
-        <div>
+      bodyText = (
+        <div className="issue-body closed">
           {this.props.issue.body}
-          <button onClick={this.toggleEditBody}>Edit</button>
         </div>
       );
     }
 
     return(
-      <div>
+      <div className="issue-details">
         {title}
         {openedText}
-        {body}
+        <div className="issue-description-header">
+          <h3>Description</h3>
+          <button className="edit-issue-description" onClick={this.toggleEditBody}>(edit)</button>
+        </div>
+        {bodyText}
         {this.toggleIssueButton()}
       </div>
     );

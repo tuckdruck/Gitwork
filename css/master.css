@@ -39,172 +39,26 @@ button {
   font-weight: bold;
 }
 
-main.landing {
-  display: flex;
-  color: white;
-  padding: 155px 0;
-  width: 57%;
-  box-sizing: border-box;
-  margin: 0 auto;
-  justify-content: space-between;
-  align-items: center;
-}
 
-main.landing div {
-  box-sizing: border-box;
-}
-
-main.landing div.login {
-  position: relative;
-  min-width: 384px;
-  margin-left: 10%;
-}
-
-main.landing h1 {
-  font-size: 80px;
-  display: block;
-}
-
-main.landing p {
-  color: rgba(255,255,255,0.6);
-  font-size: 25px;
-  line-height: 40px;
-}
-
-main.landing-container {
-  background: #24292e;
-  min-height: 100vh;
-}
 
 input {
   background: white;
   color: #757575;
 }
 
-input, button.login {
-  display: block;
-  width: 100%;
-  font-size: 20px;
-  padding: 15px 20px;
-  margin-bottom: 25px;
-  border-radius: 7px;
-  box-sizing: border-box;
-  transition: 0.3s;
-}
 
-button.login:hover {
-  background: #bc5612;
-  transition: 0.3s;
-}
-
-button.login {
-  background: #d25a08;
-  text-align: center;
-  font-weight: bold;
-}
 
 button:hover {
   cursor: pointer;
 }
 
-div.profile-main {
-  display: flex;
-  width: 57%;
-  margin: 0 auto;
-  margin-top: 26px;
-  background: white;
-  justify-content: center;
-}
-
-section.profile-sidebar {
-  margin-right: 25px;
-  width: 230px;
-}
-
-img.avatar {
-  height: 230px;
-  width: 230px;
-  border-radius: 6px;
-}
-
-section.profile-sidebar h2 {
-  font-size: 26px;
-  margin-top: 12px;
-  font-weight: bold;
-}
-
-section.profile-sidebar h3 {
-  font-size: 20px;
-  color: #666;
-}
-
-section.profile-sidebar p {
-  color: #6a737d;
-  line-height: 21px;
-  display: block;
-  margin-bottom: 14px;
-}
-
-section.profile-sidebar span {
-  display: block;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  border-top: 1px solid #eaecef;
-  border-bottom: 1px solid #eaecef;
-}
 
 i {
   color: #6a737d;
   margin-right: 5px;
 }
 
-div.repos h2 {
-  color: #24292e;
-  display: block;
-  border-bottom: 2px solid rgb(209, 213, 218);
-  padding-top: 25px;
-  padding-bottom: 25px;
-  padding-left: 21px;
-  font-size: 20px;
-  margin-bottom: 20px;
-}
 
-div.repos-row {
-  display: flex;
-}
-
-div.repo-thumb {
-  width: 405px;
-  border: 1px solid rgb(209, 213, 218);
-  padding: 20px 17px;
-  margin-bottom: 15px;
-  margin-right: 10px;
-  border-radius: 3px;
-  color: #586069;
-  box-sizing: border-box;
-}
-
-div.repos-row div.repo-thumb:last-child {
-  margin-right: 0;
-}
-
-div.repo-thumb h1 {
-  color: #0366d6;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-p.repo-thumb.description, span.repo-thumb.language {
-  font-size: 13px;
-}
-
-span.repo-thumb.language {
-  margin-right: 20px;
-}
-
-i.fa-star {
-  color: rgb(88, 96, 105);
-}
 
 footer {
   padding-top: 43px;
@@ -231,19 +85,12 @@ header button:hover {
   text-decoration: underline;
 }
 
-a {
-  text-decoration: underline;
-  transition: 0.3s;
-}
 
-a:hover {
-  color: rgba(255,255,255,0.6);
-  transition: 0.3s;
-}
 
 @media all and (max-width: 1800px) {
   div.profile-main {
     width: 90%;
+    justify-content: center;
   }
 
   header nav {
@@ -302,9 +149,11 @@ a:hover {
     font-size: 60px;
   }
 
-  main.landing div.login {
+  main.landing div.login {  width: 57%;
+    margin: 0 auto;
     max-width: 300px;
   }
+
 
   main.landing div.login input {
     width: auto;
@@ -322,4 +171,250 @@ label {
 div.errors {
   position: absolute;
   top: -31px;
+}
+
+h1.repo-show {
+  font-size: 20px;
+  color: #0366d6;
+  margin-bottom: 5px;
+}
+
+h1.repo-show svg g {
+  fill: #959da5;
+}
+
+span.repo-name {
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+div.repo-show-wide {
+  background: #fafbfc;
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+
+div.repo-show-header {
+  width: 57%;
+  margin: 0 auto;
+}
+
+div.issue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button.new-issue, button.edit, div.issue-body button, button.toggle-state, form > button, button.cancel {
+  color: white;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+button.new-issue, button.edit, div.issue-body button, form > button, button.cancel {
+  background: #2fcb53;
+}
+
+button.toggle-state {
+  background: darkgray;
+  margin-top: 20px;
+}
+
+button.new-issue, button.edit {
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+div.issue-body button, form > button, button.cancel {
+  padding: 5px 5px;
+  font-size: 14px;
+}
+
+button.new-issue:hover, button.edit:hover, div.issue-body button:hover, button.toggle-state:hover {
+  transition: 0.3s;
+}
+
+button.new-issue:hover, button.edit:hover, div.issue-body button:hover {
+  background: #269f42;
+}
+
+button.toggle-state:hover {
+  background: gray;
+}
+
+div.issues-index {
+  border-left: 1px solid rgb(225, 228, 232);
+  border-right: 1px solid rgb(225, 228, 232);
+}
+
+div.issue-index-item {
+  border-bottom: 1px solid rgb(225, 228, 232);
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+}
+
+div.issue-index-item:hover {
+  background: #f6f8fa;
+}
+div.issue-index-item > button {
+  font-size: 18px;
+}
+
+div.issue-index-item button.edit, div.issue-body button, button.toggle-state {
+  font-size: 16px;
+  padding: 0px 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+div.issue-index-item button.edit:hover, div.issue-body button:hover, button.toggle-state:hover {
+  box-sizing: border-box;
+  color: white;
+}
+
+div.issues-index div.issue-index-item:first-child {
+  border-top: 1px solid rgb(225, 228, 232);
+}
+
+
+div.issue.title {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  font-size: 18px;
+
+}
+
+
+div.issue.title-open {
+  display: flex;
+}
+
+div.issue.title-open form {
+  display: flex;
+  margin-right: 20px;
+}
+
+div.issue.title-open input {
+  padding: 0 5px;
+  margin-right: 20px;
+}
+
+div.issue-details span {
+  font-size: 12px;
+
+}
+
+div.issue-details {
+    width: 100%;
+}
+
+div.issue-body {
+  font-size: 14px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: relative;
+}
+
+div.issue-body.closed {
+  background: white;
+  padding: 15px;
+  border: 1px solid rgb(225, 228, 232);
+}
+
+div.issue-description-header {
+  display: flex;
+  margin-top: 15px;
+  background: #f1f8ff;
+  padding: 5px 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top: 1px solid rgb(225, 228, 232);
+  border-left: 1px solid rgb(225, 228, 232);
+  border-right: 1px solid rgb(225, 228, 232);
+}
+
+h3 {
+  margin-right: 15px;
+}
+
+button.edit-issue-description {
+  color: gray;
+  font-size: 12px;
+}
+
+div.issue-index-item button.edit-issue-description:hover {
+  color: gray;
+  text-decoration: underline
+}
+
+textarea {
+  display: block;
+  font-size: 14px;
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 1px solid rgb(225, 228, 232);
+  height: 100px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+div.issue-body button.cancel {
+  position: absolute;
+  bottom: 0px;
+  left: 85px;
+}
+
+div.issue-body button.update {
+  margin-top: 7px;
+}
+
+svg#primitive-dot > g {
+  fill: green;
+  padding: 10px;
+}
+
+svg#circle-clash > g {
+  fill: red;
+    padding: 10px;
+}
+
+svg g#primitive-dot {
+  fill: white;
+}
+
+svg g#circle-slash {
+  fill: white;
+}
+
+span.status {
+  min-width: 23px;
+  height: 23px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+span#primitive-dot {
+  background: green;
+}
+
+span#circle-slash {
+  background: red;
+}
+
+div.issue-index-item button:hover {
+  color: #0366d6;
+}
+
+button.issue-details:hover {
+  color: white;
 }

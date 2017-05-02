@@ -22,7 +22,6 @@ export const updateIssue = (user, issue, params) => {
 };
 
 export const createIssue = (user, issue, repo) => {
-  debugger
   const headers = { 'Authorization': 'Basic ' + `${user.token}` };
   const url = `https://api.github.com/repos/${user.login}/${repo.name}/issues`
 

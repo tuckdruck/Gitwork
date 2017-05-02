@@ -17,6 +17,7 @@ export const receiveErrors = (errors) => {
 }
 
 export const logOut = () => {
+  sessionStorage.clear();
   return {
     type: RECEIVE_USER,
     user: null

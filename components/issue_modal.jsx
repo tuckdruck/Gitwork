@@ -38,7 +38,7 @@ export default class IssueModal extends React.Component {
 
     return(
       <div>
-        <button onClick={this.showModal}>New issue</button>
+        <button className="new-issue" onClick={this.showModal}>New issue</button>
         {modal}
       </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchIssues } from '../actions/issue_actions';
+import { fetchIssues, receiveIssues } from '../actions/issue_actions';
 import issuesArray from '../selectors/issues_selector';
 import IssueIndexItem from './issue_index_item';
 
@@ -9,6 +9,10 @@ class IssuesIndex extends React.Component {
 
   constructor(props) {
     super(props);
+  }
+
+  componentWillMount() {
+    this.props.receiveIssues([]);
   }
 
   componentDidMount() {
@@ -20,7 +24,7 @@ class IssuesIndex extends React.Component {
       return(<IssueIndexItem key={issue.id} issue={issue}/>);
     });
     return(
-      <div>
+      <div className="issues-index">
         {issues}
       </div>
     );
@@ -37,7 +41,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchIssues: (user, repo) => { dispatch(fetchIssues(user, repo)); }
+    fetchIssues: (user, repo) => { dispatch(fetchIssues(user, repo)); },
+    receiveIssues: (issues) => { dispatch(receiveIssues(issues)); }
   };
 };
 

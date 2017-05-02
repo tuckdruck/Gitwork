@@ -3,9 +3,10 @@ export const RECEIVE_ISSUE = "RECEIVE_ISSUE";
 import * as IssueAPIUtil from '../util/issue_api_util';
 
 export const receiveIssues = issues => {
+  const onlyIssues = issues.filter((issue) => { return !issue.pull_request });
   return {
     type: RECEIVE_ISSUES,
-    issues: issues
+    issues: onlyIssues
   };
 };
 

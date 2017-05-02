@@ -20,6 +20,8 @@ class SignIn extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    sessionStorage.setItem('username', this.state.username);
+    sessionStorage.setItem('token', this.state.token);
     this.props.logIn(this.state);
   }
 

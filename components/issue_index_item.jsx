@@ -2,6 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import IssueBody from './issue_body';
+import StatusIcon from './status_icon';
 
 class IssueIndexItem extends React.Component {
 
@@ -22,10 +23,17 @@ class IssueIndexItem extends React.Component {
       title = (<IssueBody issue={this.props.issue} toggleIssue={this.toggleIssue}/>);
     }
     else {
-      title = (<button onClick={this.toggleIssue}>{this.props.issue.title}</button>);
+      title = (
+        <button onClick={this.toggleIssue}>
+
+          {this.props.issue.title}
+        </button>
+      );
     }
 
-    return(<div>{title}</div>);
+    return(
+      <div className="issue-index-item"><StatusIcon status={this.props.issue.state}/>{title}</div>
+    );
   }
 }
 
