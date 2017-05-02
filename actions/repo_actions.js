@@ -11,14 +11,10 @@ export const receiveRepos = repos => {
 export const fetchRepos = user => {
   return (dispatch) => {
     return RepoAPIUtil.fetchRepos(user)
-      .then((res) => {
-        return res.text();
-      })
+      .then((res) => (res.text()))
       .then((json) => {
         const repos = JSON.parse(json);
-        const reposObj = {};
-        repos.forEach((repo) => { reposObj[repo.id] = repo; });
         return dispatch(receiveRepos(reposObj));
-      })
-  }
-}
+      });
+  };
+};

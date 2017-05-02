@@ -1,4 +1,4 @@
-div, form, label, input, button, ul, li, h1, h2, section, main, h3, a {
+div, form, label, input, button, ul, li, h1, h2, section, main, h3, a, textarea {
   color: inherit;
   background: transparent;
   margin: 0;
@@ -24,6 +24,6 @@ body {
   overflow-y: scroll;
 }
 
-input:focus, button:focus {
+input:focus, button:focus, textarea:focus {
   outline-width: 0;
 }

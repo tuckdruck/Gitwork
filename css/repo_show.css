@@ -1,0 +1,29 @@
+h1.repo-show {
+  font-size: 20px;
+  color: #0366d6;
+  margin-bottom: 5px;
+}
+
+h1.repo-show svg g {
+  fill: #959da5;
+}
+
+span.repo-name {
+  font-weight: bold;
+}
+div.repo-show-wide {
+  background: #fafbfc;
+  padding-top: 26px;
+  padding-bottom: 26px;
+}
+
+div.repo-show-header {
+  width: 57%;
+  margin: 0 auto;
+}
+
+div.issue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

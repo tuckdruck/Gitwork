@@ -38,11 +38,20 @@ main.landing-container {
 input, button.login {
   display: block;
   width: 100%;
-  padding: 15px 20px;
-  border-radius: 7px;
   box-sizing: border-box;
   transition: 0.3s;
 }
+
+main.landing input {
+  padding: 15px 20px;
+  border-radius: 7px;
+}
+
+button.login {
+  padding: 15px 20px;
+  border-radius: 7px;
+}
+
 
 button.login {
   font-size: 20px;

@@ -1,10 +1,11 @@
 import 'whatwg-fetch'
 
 export const fetchIssues = (user, repo) => {
-  const headers = { 'Authorization': 'Basic ' + `${user.token}` };
+  const headers = { 'Authorization': 'Basic ' + `${user.token}`  };
   const url = `https://api.github.com/repos/${user.login}/${repo.name}/issues?state=all`;
   return fetch(url, {
-    headers: headers
+    headers: headers,
+    cache: "no-store"
   });
 };
 
@@ -17,6 +18,7 @@ export const updateIssue = (user, issue, params) => {
   return fetch(url, {
     method: "PATCH",
     headers: headers,
+    cache: "no-store",
     body: JSON.stringify(params)
   });
 };
@@ -28,6 +30,7 @@ export const createIssue = (user, issue, repo) => {
   return fetch(url, {
     method: "POST",
     headers: headers,
+    cache: "no-store",
     body: JSON.stringify(issue)
   });
 };

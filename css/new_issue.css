@@ -1,0 +1,24 @@
+section.new-form-container {
+  display: flex;
+  margin-top: 40px;
+}
+
+form.new-issue {
+  border: 1px solid #d1d5da;
+  width: 100%;
+  padding: 13px;
+  margin-left: 20px;
+}
+
+form.new-issue input, form.new issue textarea {
+  border: 1px solid #d1d5da;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 15px;
+}
+
+form.new-issue textarea {
+  height: 230px;
+  vertical-align: top;
+  margin-bottom: 15px;
+}

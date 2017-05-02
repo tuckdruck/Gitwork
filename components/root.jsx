@@ -10,8 +10,9 @@ const Root = ({ store }) => (
 
     <HashRouter>
       <div>
-        <Route path="/repos/:repoId" component={RepoShowPage} />
-        <Route exact path="/" component={App} />
+        <Route path="/" component={App}>
+          <Route path="/repos/:repoId" component={RepoShowPage} />
+        </Route>
       </div>
     </HashRouter>
 

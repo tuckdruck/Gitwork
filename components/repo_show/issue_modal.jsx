@@ -25,11 +25,18 @@ export default class IssueModal extends React.Component {
 
   render() {
     let modal = "";
+
+    const modalStyle = {
+      overlay: { backgroundColor: 'rgba(24, 24, 24, 0.75)' },
+      content: { top: '20%', left: '24%', right: '24%', bottom: '20%' }
+    };
+
     if (this.state.modalOpen) {
       modal = (
         <Modal  isOpen={this.state.modalOpen} contentLabel="Review"
                 onRequestClose={this.closeModal}
                 shouldCloseOnOverlayClick={true}
+                style={modalStyle}
         >
         <NewIssueForm repo={this.props.repo} closeModal={this.closeModal} />
         </Modal>

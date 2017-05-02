@@ -24,7 +24,7 @@ class IssueIndexItem extends React.Component {
     }
     else {
       title = (
-        <button onClick={this.toggleIssue}>
+        <button className="closed-issue-title" onClick={this.toggleIssue}>
 
           {this.props.issue.title}
         </button>

@@ -48,12 +48,15 @@ section.profile-sidebar span {
 
 div.repos h2, div.issue-header {
   color: #24292e;
-  display: block;
   border-bottom: 2px solid rgb(209, 213, 218);
   padding-top: 25px;
   padding-bottom: 25px;
   font-size: 20px;
   margin-bottom: 20px;
+}
+
+div.repos h2 {
+  display: block;
 }
 
 div.repos h2 {

@@ -1,0 +1,215 @@
+button {
+  transition: 0.3s;
+}
+
+button:hover {
+  transition: 0.3s;
+}
+
+div.issue-details button, button.new-issue {
+  color: white;
+  border-radius: 5px;
+  background: #2fcb53;
+  font-size: 14px;
+  padding: 0px 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+div.issue-index-item button.edit:hover, div.issue-body button:hover, button.toggle-state:hover {
+  box-sizing: border-box;
+  color: white;
+}
+
+div.issue-details button.toggle-state {
+  background: darkgray;
+  margin-top: 20px;
+}
+
+button.new-issue {
+  padding: 10px 15px;
+  font-size: 16px;
+}
+
+div.issue-description-header button.edit-issue-description {
+  color: gray;
+  background: inherit;
+  font-size: 12px;
+}
+
+div.issue-description-header button.edit-issue-description:hover {
+  color: gray;
+  background: inherit;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+div.issue-body button.cancel {
+  position: absolute;
+  bottom: 0px;
+  left: 85px;
+}
+
+div.issue-body button.update {
+  margin-top: 7px;
+}
+
+div.issue-details button:hover, button.new-issue:hover {
+  background: #269f42;
+}
+
+div.issue-details button.toggle-state:hover {
+  background: gray;
+}
+
+div.issue-details button.closed-issue-title {
+  color: black;
+  background: inherit;
+  font-size: 18px;
+  padding: 0px;
+}
+
+div.issue-index-item button.closed-issue-title:hover {
+  color: #0366d6;
+}
+
+button.issue-details:hover {
+  color: white;
+}
+
+div.issues-index {
+  border-left: 1px solid rgb(225, 228, 232);
+  border-right: 1px solid rgb(225, 228, 232);
+}
+
+div.issue-index-item {
+  border-bottom: 1px solid rgb(225, 228, 232);
+  padding: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+}
+
+div.issue-index-item:hover {
+  background: #f6f8fa;
+}
+
+div.issues-index div.issue-index-item:first-child {
+  border-top: 1px solid rgb(225, 228, 232);
+}
+
+div.issue.title {
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  font-size: 18px;
+}
+
+div.issue.title-open {
+  display: flex;
+}
+
+div.issue.title-open form {
+  display: flex;
+  margin-right: 20px;
+}
+
+div.issue.title-open input {
+  padding: 0 5px;
+  margin-right: 20px;
+}
+
+div.issue-details span {
+  font-size: 12px;
+
+}
+
+div.issue-details {
+  width: 100%;
+}
+
+div.issue-body {
+  font-size: 14px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: relative;
+}
+
+div.issue-body.closed {
+  background: white;
+  padding: 15px;
+  border: 1px solid rgb(225, 228, 232);
+}
+
+div.issue-description-header {
+  display: flex;
+  margin-top: 15px;
+  background: #f1f8ff;
+  padding: 5px 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top: 1px solid rgb(225, 228, 232);
+  border-left: 1px solid rgb(225, 228, 232);
+  border-right: 1px solid rgb(225, 228, 232);
+}
+
+button.edit-issue-description {
+  color: gray;
+  font-size: 12px;
+}
+
+
+
+svg#primitive-dot > g {
+  fill: green;
+  padding: 10px;
+}
+
+svg#circle-slash > g {
+  fill: red;
+    padding: 10px;
+}
+
+svg g#primitive-dot {
+  fill: white;
+    margin-top: 3px;
+}
+
+svg g#circle-slash {
+  fill: white;
+  margin-top: 3px;
+}
+
+span.status {
+  min-width: 23px;
+  height: 23px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+span#primitive-dot {
+  background: green;
+}
+
+span#circle-slash {
+  background: red;
+}
+
+svg#circle-slash {
+  margin-top: 3px;
+}
+
+svg#primitive-dot {
+  margin-top: 3px;
+}
+
+button.closed-issue-title {
+  font-size: 18px;
+}
+
+div.issue-body textarea {
+  background: white;
+}

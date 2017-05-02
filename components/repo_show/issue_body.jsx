@@ -89,7 +89,7 @@ class IssueBody extends React.Component {
     else {
       title = (
         <div className="issue title">
-          <button onClick={this.props.toggleIssue}>{this.props.issue.title}</button>
+          <button className="closed-issue-title" onClick={this.props.toggleIssue}>{this.props.issue.title}</button>
           <button className="edit" onClick={this.toggleEditTitle}>Edit title</button>
         </div>
       );

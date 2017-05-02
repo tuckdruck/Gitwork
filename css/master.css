@@ -39,26 +39,19 @@ button {
   font-weight: bold;
 }
 
-
-
 input {
   background: white;
   color: #757575;
 }
 
-
-
 button:hover {
   cursor: pointer;
 }
-
 
 i {
   color: #6a737d;
   margin-right: 5px;
 }
-
-
 
 footer {
   padding-top: 43px;
@@ -84,8 +77,6 @@ footer nav {
 header button:hover {
   text-decoration: underline;
 }
-
-
 
 @media all and (max-width: 1800px) {
   div.profile-main {
@@ -173,184 +164,12 @@ div.errors {
   top: -31px;
 }
 
-h1.repo-show {
-  font-size: 20px;
-  color: #0366d6;
-  margin-bottom: 5px;
-}
-
-h1.repo-show svg g {
-  fill: #959da5;
-}
-
-span.repo-name {
-  font-weight: bold;
-}
-
 a:hover {
   text-decoration: underline;
 }
 
-div.repo-show-wide {
-  background: #fafbfc;
-  padding-top: 26px;
-  padding-bottom: 26px;
-}
-
-div.repo-show-header {
-  width: 57%;
-  margin: 0 auto;
-}
-
-div.issue-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-button.new-issue, button.edit, div.issue-body button, button.toggle-state, form > button, button.cancel {
-  color: white;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-button.new-issue, button.edit, div.issue-body button, form > button, button.cancel {
-  background: #2fcb53;
-}
-
-button.toggle-state {
-  background: darkgray;
-  margin-top: 20px;
-}
-
-button.new-issue, button.edit {
-  padding: 10px 15px;
-  font-size: 16px;
-}
-
-div.issue-body button, form > button, button.cancel {
-  padding: 5px 5px;
-  font-size: 14px;
-}
-
-button.new-issue:hover, button.edit:hover, div.issue-body button:hover, button.toggle-state:hover {
-  transition: 0.3s;
-}
-
-button.new-issue:hover, button.edit:hover, div.issue-body button:hover {
-  background: #269f42;
-}
-
-button.toggle-state:hover {
-  background: gray;
-}
-
-div.issues-index {
-  border-left: 1px solid rgb(225, 228, 232);
-  border-right: 1px solid rgb(225, 228, 232);
-}
-
-div.issue-index-item {
-  border-bottom: 1px solid rgb(225, 228, 232);
-  padding: 20px;
-  font-size: 16px;
-  font-weight: bold;
-  display: flex;
-}
-
-div.issue-index-item:hover {
-  background: #f6f8fa;
-}
-div.issue-index-item > button {
-  font-size: 18px;
-}
-
-div.issue-index-item button.edit, div.issue-body button, button.toggle-state {
-  font-size: 16px;
-  padding: 0px 10px;
-  border-radius: 5px;
-  box-sizing: border-box;
-}
-
-div.issue-index-item button.edit:hover, div.issue-body button:hover, button.toggle-state:hover {
-  box-sizing: border-box;
-  color: white;
-}
-
-div.issues-index div.issue-index-item:first-child {
-  border-top: 1px solid rgb(225, 228, 232);
-}
-
-
-div.issue.title {
-  display: flex;
-  justify-content: space-between;
-  border: none;
-  font-size: 18px;
-
-}
-
-
-div.issue.title-open {
-  display: flex;
-}
-
-div.issue.title-open form {
-  display: flex;
-  margin-right: 20px;
-}
-
-div.issue.title-open input {
-  padding: 0 5px;
-  margin-right: 20px;
-}
-
-div.issue-details span {
-  font-size: 12px;
-
-}
-
-div.issue-details {
-    width: 100%;
-}
-
-div.issue-body {
-  font-size: 14px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  position: relative;
-}
-
-div.issue-body.closed {
-  background: white;
-  padding: 15px;
-  border: 1px solid rgb(225, 228, 232);
-}
-
-div.issue-description-header {
-  display: flex;
-  margin-top: 15px;
-  background: #f1f8ff;
-  padding: 5px 10px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-top: 1px solid rgb(225, 228, 232);
-  border-left: 1px solid rgb(225, 228, 232);
-  border-right: 1px solid rgb(225, 228, 232);
-}
-
 h3 {
   margin-right: 15px;
-}
-
-button.edit-issue-description {
-  color: gray;
-  font-size: 12px;
-}
-
-div.issue-index-item button.edit-issue-description:hover {
-  color: gray;
-  text-decoration: underline
 }
 
 textarea {
@@ -365,56 +184,6 @@ textarea {
   box-sizing: border-box;
 }
 
-div.issue-body button.cancel {
-  position: absolute;
-  bottom: 0px;
-  left: 85px;
-}
-
-div.issue-body button.update {
-  margin-top: 7px;
-}
-
-svg#primitive-dot > g {
-  fill: green;
-  padding: 10px;
-}
-
-svg#circle-clash > g {
-  fill: red;
-    padding: 10px;
-}
-
-svg g#primitive-dot {
-  fill: white;
-}
-
-svg g#circle-slash {
-  fill: white;
-}
-
-span.status {
-  min-width: 23px;
-  height: 23px;
-  display: inline-block;
-  text-align: center;
-  border-radius: 50%;
-  box-sizing: border-box;
-  margin-right: 10px;
-}
-
-span#primitive-dot {
-  background: green;
-}
-
-span#circle-slash {
-  background: red;
-}
-
-div.issue-index-item button:hover {
-  color: #0366d6;
-}
-
-button.issue-details:hover {
-  color: white;
+img.avatar-small {
+  height: 45px;
 }

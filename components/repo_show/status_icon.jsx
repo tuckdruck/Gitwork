@@ -20,7 +20,7 @@ const StatusIcon = (state) => {
   else {
     return(
       <span id="circle-slash" className="status">
-      <svg id="circle-clash" width="14px" height="16px" viewBox="0 0 14 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+      <svg id="circle-slash" width="14px" height="16px" viewBox="0 0 14 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
           <title>circle-slash</title>
           <desc>Created with Sketch.</desc>
           <defs></defs>
