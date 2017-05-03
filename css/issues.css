@@ -44,7 +44,7 @@ div.issue-description-header button.edit-issue-description:hover {
   text-decoration: underline;
 }
 
-div.issue-body div.issue.title-open > button {
+div.issue-body > button {
   position: absolute;
   bottom: 0px;
   left: 85px;
@@ -69,7 +69,7 @@ div.issue-details div.issue.title.closed button.title {
   padding: 0px;
 }
 
-div.issue-details div.issue.title.closed button.title:hover {
+div.issue-details div.issue.title.closed button.title:hover, button.closed-issue-title:hover {
   color: #0366d6;
 }
 
@@ -212,4 +212,8 @@ div.issue-details div.issue.title.closed button.title {
 
 div.issue-body textarea {
   background: white;
+}
+
+button.closed-issue-title {
+  font-size: 18px;
 }

@@ -46,7 +46,7 @@ export default class IssueTitle extends React.Component {
     );
   }
 
-  closedIssueTitle() {
+  closedIssueHeader() {
     return(
       <div className="issue title closed">
         {this.closedIssueTitle()}
@@ -59,7 +59,7 @@ export default class IssueTitle extends React.Component {
 
   render() {
     if (this.state.edit) { return(this.issueTitleForm()); }
-    else { return this.closedIssueTitle(); }
+    else { return this.closedIssueHeader(); }
   }
 
 }

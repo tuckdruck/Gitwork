@@ -1,52 +1,50 @@
 import React from 'react';
-import Header from '../header';
-import IssuesIndex from './issues_index';
 import { connect } from 'react-redux';
-import IssueModal from './issue_modal';
 import { Redirect } from 'react-router-dom';
+
 import { logIn } from '../../actions/session_actions';
 import { fetchRepos } from '../../actions/repo_actions';
+
+import IssuesIndex from './issues_index';
+import NewIssue from './new_issue';
 import Footer from '../footer';
 import RepoHeader from './repo_header';
 import RepoStats from '../repo_stats';
 
-const RepoShowPage = (props) => {
-  if (!props.user) {
-    return(<Redirect to="/" />);
+
+const RepoShowPage = ({ user, repo, logInUser, fetchRepos }) => {
+  if (!user) { return(<Redirect to="/" />); }
+
+  if (!user.login) {
+    logInUser(user).then(() => (fetchRepos(user));
   }
 
-  if (!props.user.login) {
-    props.logInUser(props.user);
-    return(<div></div>);
-  }
+  if (repo) {
+    return(
+      <div>
+          <div className="repo-show-wide">
+            <div className="repo-show-header">
+              <RepoHeader username={user.login} repoName={repo.name}/>
+              <RepoStats repo={repo}/>
+            </div>
+          </div>
+        <div className="repo-show-main">
 
-  if (!props.repo) {
-    props.fetchRepos(props.user);
-    return(<div></div>);
-  }
-
-  return(
-    <div>
-        <div className="repo-show-wide">
-          <div className="repo-show-header">
-            <RepoHeader username={props.user.login} repoName={props.repo.name}/>
-            <RepoStats repo={props.repo}/>
+          <div className="repo-description">
+            <p>{repo.description}</p>
+            <div className="issue-header">
+              <h2>Issues</h2>
+              <NewIssue repo={repo}/>
+            </div>
+            <IssuesIndex repo={repo}/>
           </div>
         </div>
-      <div className="repo-show-main">
-
-        <div className="repo-description">
-          <p>{props.repo.description}</p>
-          <div className="issue-header">
-            <h2>Issues</h2>
-            <IssueModal repo={props.repo}/>
-          </div>
-          <IssuesIndex repo={props.repo}/>
-        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-  );
+    );
+  }
+  else { return (<div></div>); }
+
 }
 
 const mapStateToProps = (state, ownProps) => {

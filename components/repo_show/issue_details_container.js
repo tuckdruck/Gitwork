@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
-import IssueBody from './issue_body';
+
+import IssueDetails from './issue_details';
 import { updateIssue } from '../../actions/issue_actions';
+
 
 const mapStateToProps = state => {
   return {
@@ -8,11 +10,16 @@ const mapStateToProps = state => {
   };
 };
 
+
 const mapDispatchToProps = dispatch => {
   return {
-    updateIssue: (user, issue, params) => { dispatch(updateIssue(user, issue, params)); }
+    updateIssue: (user, issue, params) => {
+      return dispatch(updateIssue(user, issue, params));
+    }
   };
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(IssueBody);
+export default connect(
+  mapStateToProps, mapDispatchToProps
+)(IssueDetails);
