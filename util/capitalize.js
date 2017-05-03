@@ -1,5 +1,5 @@
 const capitalize = word => {
-  return type[0].toUpperCase() + type.slice(1, type.length);
+  return word[0].toUpperCase() + word.slice(1, word.length);
 }
 
 export default capitalize;

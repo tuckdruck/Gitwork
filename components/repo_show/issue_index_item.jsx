@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import IssueBody from './issue_body';
+import IssueBodyContainer from './issue_body_container';
 import StatusIcon from './status_icon';
 
 class IssueIndexItem extends React.Component {
@@ -20,7 +20,7 @@ class IssueIndexItem extends React.Component {
   render() {
     let title;
     if (this.state.open) {
-      title = (<IssueBody issue={this.props.issue} toggleIssue={this.toggleIssue}/>);
+      title = (<IssueBodyContainer issue={this.props.issue} toggleIssue={this.toggleIssue}/>);
     }
     else {
       title = (

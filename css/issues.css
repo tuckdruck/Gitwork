@@ -44,7 +44,7 @@ div.issue-description-header button.edit-issue-description:hover {
   text-decoration: underline;
 }
 
-div.issue-body button.cancel {
+div.issue-body div.issue.title-open > button {
   position: absolute;
   bottom: 0px;
   left: 85px;
@@ -62,14 +62,14 @@ div.issue-details button.toggle-state:hover {
   background: gray;
 }
 
-div.issue-details button.closed-issue-title {
+div.issue-details div.issue.title.closed button.title {
   color: black;
   background: inherit;
   font-size: 18px;
   padding: 0px;
 }
 
-div.issue-index-item button.closed-issue-title:hover {
+div.issue-details div.issue.title.closed button.title:hover {
   color: #0366d6;
 }
 
@@ -206,7 +206,7 @@ svg#primitive-dot {
   margin-top: 3px;
 }
 
-button.closed-issue-title {
+div.issue-details div.issue.title.closed button.title {
   font-size: 18px;
 }
 

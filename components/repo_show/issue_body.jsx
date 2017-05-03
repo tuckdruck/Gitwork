@@ -1,7 +1,8 @@
 import React from 'react';
-import { updateIssue } from '../../actions/issue_actions';
+
 import StatusIcon from './status_icon';
 import capitalize from '../../util/capitalize';
+import IssueTitle from './issue_title';
 
 
 export default class IssueBody extends React.Component {
@@ -71,18 +72,15 @@ export default class IssueBody extends React.Component {
   }
 
 
-  updateIssue(type) {
-    return(e) => {
-      e.preventDefault();
-      const newIssue = this.props.issue;
-      newIssue[type] = this.state[type];
+  updateIssue(type, value) {
+    const newIssue = this.props.issue;
+    newIssue[type] = this.state[type];
 
-      this.props.updateIssue(
-        this.props.user, this.props.issue, { [type]: this.state[type] }
-      );
+    this.props.updateIssue(
+      this.props.user, this.props.issue, { [type]: value }
+    );
 
-      this.setState({ ["edit" + capitalize(type)]: false });
-    }
+    this.setState({ ["edit" + capitalize(type)]: false });
   }
 
 
@@ -93,7 +91,7 @@ export default class IssueBody extends React.Component {
   }
 
   title() {
-    return(<IssueTitle issue={this.props.issue} updateIssue={this.props.updateIssue} edit={false} toggleIssue={this.props.toggleIssue}/>);
+    return(<IssueTitle issue={this.props.issue} updateIssue={this.updateIssue} edit={false} toggleIssue={this.props.toggleIssue}/>);
   }
 
   render() {

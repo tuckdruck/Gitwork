@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import IssueBody from './issue_body';
+import { updateIssue } from '../../actions/issue_actions';
 
 const mapStateToProps = state => {
   return {
