@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "webpack",
-    "start": "node github_api_exercise.js"
+    "start": "node github_api_exercise.jsx"
   },
   "repository": {
     "type": "git",
@@ -37,7 +37,7 @@
     "whatwg-fetch": "^2.0.3"
   },
   "engines": {
-     "node": "4.1.1",
+     "node": "6.2.1",
      "npm": "2.1.x"
   }
 }
