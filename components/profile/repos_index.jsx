@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import { fetchRepos } from '../../actions/repo_actions';
 import reposArray from '../../selectors/repos_selector';
-import RepoIndexItem from './repo_index_item';
+
+import ReposRow from './repos_row';
+
 
 class ReposIndex extends React.Component {
 
@@ -14,28 +17,26 @@ class ReposIndex extends React.Component {
     this.props.fetchRepos(this.props.user);
   }
 
-  render() {
-    const repoIndexItems = [];
-    for (let i = 0; i < this.props.repos.length; i += 2) {
-      let nextRepo = "";
-      if (this.props.repos[i + 1]) {
-        nextRepo = (<RepoIndexItem key={i + 1} repo={this.props.repos[i + 1]}/>)
-      }
-      repoIndexItems.push(
-        <div className="repos-row" key={i}>
-          <RepoIndexItem key={i} repo={this.props.repos[i]}/>
-          {nextRepo}
-        </div>
-      );
+  repoRows() {
+    const { repos } = this.props;
+    const repoRows = [];
+
+    for (let i = 0; i < repos.length; i += 2) {
+      repoRows.push(<ReposRow key={i} repos={repos.slice(i, i + 2)} />);
     }
 
+    return repoRows;
+  }
+
+  render() {
     return(
       <div className="repos">
         <h2>Repositories</h2>
-        {repoIndexItems}
+        {this.repoRows()}
       </div>
     );
   }
+
 }
 
 const mapStateToProps = state => {

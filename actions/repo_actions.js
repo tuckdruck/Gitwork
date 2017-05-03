@@ -11,7 +11,9 @@ export const receiveRepos = repos => {
 export const fetchRepos = user => {
   return (dispatch) => {
     return RepoAPIUtil.fetchRepos(user)
-      .then((res) => (res.text()))
+      .then((res) => {
+        return res.text();
+      })
       .then((json) => {
         const repos = JSON.parse(json);
         return dispatch(receiveRepos(repos));
