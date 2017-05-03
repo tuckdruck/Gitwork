@@ -1,6 +1,7 @@
 import React from 'react';
 import { updateIssue } from '../../actions/issue_actions';
 import StatusIcon from './status_icon';
+import capitalize from '../../util/capitalize';
 
 
 export default class IssueBody extends React.Component {
@@ -24,11 +25,9 @@ export default class IssueBody extends React.Component {
     this.toggleEditTitle = this.toggleEditTitle.bind(this);
     this.toggleEditBody = this.toggleEditBody.bind(this);
 
-    this.updateIssueTitle = this.updateIssueTitle.bind(this);
-    this.updateIssueBody = this.updateIssueBody.bind(this);
+    this.updateIssue = this.updateIssue.bind(this);
 
     this.toggleIssueState = this.toggleIssueState.bind(this);
-    this.toggleIssueButton = this.toggleIssueButton.bind(this);
   }
 
 
@@ -42,6 +41,7 @@ export default class IssueBody extends React.Component {
       </button>
     );
   }
+
 
   update(type) {
     return(e) => {
@@ -70,71 +70,42 @@ export default class IssueBody extends React.Component {
     );
   }
 
-  updateIssueTitle(e) {
-    e.preventDefault();
-    const newIssue = this.props.issue;
-    newIssue["title"] = this.state.title;
-
-    this.props.updateIssue(
-      this.props.user, this.props.issue, { title: this.state.title }
-    );
-
-    this.setState({ editTitle: false });
-  }
 
   updateIssue(type) {
-    return(e) 
-  }
-  updateIssueBody(e) {
-    e.preventDefault();
-    const newIssue = this.props.issue;
-    newIssue["body"] = this.state.body;
+    return(e) => {
+      e.preventDefault();
+      const newIssue = this.props.issue;
+      newIssue[type] = this.state[type];
 
-    this.props.updateIssue(
-      this.props.user, this.props.issue, { body: this.state.body }
-    );
+      this.props.updateIssue(
+        this.props.user, this.props.issue, { [type]: this.state[type] }
+      );
 
-    this.setState({ editBody: false });
+      this.setState({ ["edit" + capitalize(type)]: false });
+    }
   }
+
 
   date() {
-    let date = this.props.issue.created_at.slice(0, 10).split("-");
-    const year = date.shift();
-    date = date.concat(year).join("/");
-    return date;
+    const dateArr = this.props.issue.created_at.slice(0, 10).split("-");
+    const year = dateArr.shift();
+    return dateArr.concat(year).join("/");
+  }
+
+  title() {
+    return(<IssueTitle issue={this.props.issue} updateIssue={this.props.updateIssue} edit={false} toggleIssue={this.props.toggleIssue}/>);
   }
 
   render() {
-    let title;
     let openedText = (<span>opened {this.date()} by {this.props.user.login}</span>);
     let bodyText;
-
-    if (this.state.editTitle) {
-      title = (
-        <div className="issue title-open">
-          <form className="issue title">
-            <input type="text" value={this.state.title} onChange={this.update("title")} />
-            <button onClick={this.updateIssueTitle}>Save</button>
-          </form>
-            <button className="cancel" onClick={this.toggleEditTitle}>Cancel</button>
-        </div>
-      );
-    }
-    else {
-      title = (
-        <div className="issue title">
-          <button className="closed-issue-title" onClick={this.props.toggleIssue}>{this.props.issue.title}</button>
-          <button className="edit" onClick={this.toggleEditTitle}>Edit title</button>
-        </div>
-      );
-    }
 
     if (this.state.editBody) {
       bodyText = (
         <div className="issue-body">
           <form>
             <textarea onChange={this.update("body")} value={this.state.body} />
-            <button className="update" onClick={this.updateIssueBody}>Update</button>
+            <button className="update" onClick={this.updateIssue("body")}>Update</button>
           </form>
           <button className="cancel" onClick={this.toggleEditBody}>Cancel</button>
         </div>
@@ -150,7 +121,7 @@ export default class IssueBody extends React.Component {
 
     return(
       <div className="issue-details">
-        {title}
+        {this.title()}
         {openedText}
         <div className="issue-description-header">
           <h3>Description</h3>
