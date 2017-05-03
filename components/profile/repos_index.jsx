@@ -39,6 +39,7 @@ class ReposIndex extends React.Component {
 
 }
 
+
 const mapStateToProps = state => {
   return {
     repos: reposArray(state.repos),
@@ -46,10 +47,12 @@ const mapStateToProps = state => {
   };
 };
 
+
 const mapDispatchToProps = dispatch => {
   return {
     fetchRepos: (user) => { return dispatch(fetchRepos(user)); }
   };
 };
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReposIndex);

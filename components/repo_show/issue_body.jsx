@@ -1,14 +1,24 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { updateIssue } from '../../actions/issue_actions';
 import StatusIcon from './status_icon';
 
-class IssueBody extends React.Component {
+
+export default class IssueBody extends React.Component {
+
 
   constructor(props) {
     super(props);
-    this.state = { editTitle: false, editBody: false, body: this.props.issue.body, title: this.props.issue.title };
 
+    this.state = {
+      editTitle: false, editBody: false,
+      body: this.props.issue.body, title: this.props.issue.title
+    };
+
+    this.bindFunctions();
+  }
+
+
+  bindFunctions() {
     this.update = this.update.bind(this);
 
     this.toggleEditTitle = this.toggleEditTitle.bind(this);
@@ -18,22 +28,19 @@ class IssueBody extends React.Component {
     this.updateIssueBody = this.updateIssueBody.bind(this);
 
     this.toggleIssueState = this.toggleIssueState.bind(this);
-
     this.toggleIssueButton = this.toggleIssueButton.bind(this);
   }
 
-  toggleIssueButton() {
-    const buttonText = this.props.issue.state === "open" ? "Close issue" : "Reopen issue";
-    return(<button className="toggle-state" onClick={this.toggleIssueState}>{buttonText}</button>)
-  }
 
+  toggleStatusButton() {
+    const { issue } = this.props;
+    const action = (issue.state === "open") ? "Close " : "Reopen ";
 
-  updateIssueTitle(e) {
-    e.preventDefault();
-    const newIssue = this.props.issue;
-    newIssue["title"] = this.state.title;
-    this.props.updateIssue(this.props.user, this.props.issue, { title: this.state.title });
-    this.setState({ editTitle: false });
+    return(
+      <button className="toggle-state" onClick={this.toggleIssueState}>
+        {action}issue
+      </button>
+    );
   }
 
   update(type) {
@@ -42,24 +49,51 @@ class IssueBody extends React.Component {
     }
   }
 
+
   toggleEditBody() {
     this.setState({ editBody: !this.state.editBody });
   }
+
 
   toggleEditTitle() {
     this.setState({ editTitle: !this.state.editTitle });
   }
 
+
   toggleIssueState() {
-    const newState = this.props.issue.state === "open" ? "closed" : "open";
-    this.props.updateIssue(this.props.user, this.props.issue, { state: newState });
+    const { issue } = this.props;
+
+    const newState = issue.state === "open" ? "closed" : "open";
+
+    this.props.updateIssue(
+      this.props.user, this.props.issue, { state: newState }
+    );
   }
 
+  updateIssueTitle(e) {
+    e.preventDefault();
+    const newIssue = this.props.issue;
+    newIssue["title"] = this.state.title;
+
+    this.props.updateIssue(
+      this.props.user, this.props.issue, { title: this.state.title }
+    );
+
+    this.setState({ editTitle: false });
+  }
+
+  updateIssue(type) {
+    return(e) 
+  }
   updateIssueBody(e) {
     e.preventDefault();
     const newIssue = this.props.issue;
     newIssue["body"] = this.state.body;
-    this.props.updateIssue(this.props.user, this.props.issue, { body: this.state.body });
+
+    this.props.updateIssue(
+      this.props.user, this.props.issue, { body: this.state.body }
+    );
+
     this.setState({ editBody: false });
   }
 
@@ -123,24 +157,9 @@ class IssueBody extends React.Component {
           <button className="edit-issue-description" onClick={this.toggleEditBody}>(edit)</button>
         </div>
         {bodyText}
-        {this.toggleIssueButton()}
+        {this.toggleStatusButton()}
       </div>
     );
   }
 
 }
-
-const mapStateToProps = state => {
-  return {
-    user: state.session.user
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return {
-    updateIssue: (user, issue, params) => { dispatch(updateIssue(user, issue, params)); }
-  };
-};
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(IssueBody);
