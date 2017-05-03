@@ -11,13 +11,14 @@ h1.repo-show svg g {
 span.repo-name {
   font-weight: bold;
 }
-div.repo-show-wide {
+div.repo-show div.wide {
   background: #fafbfc;
   padding-top: 26px;
   padding-bottom: 26px;
+  padding-left: 22%;
 }
 
-div.repo-show-header {
+div.repo-show div.header {
   width: 57%;
   margin: 0 auto;
 }

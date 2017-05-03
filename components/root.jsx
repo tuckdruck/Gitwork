@@ -4,19 +4,12 @@ import { HashRouter, Route, Redirect, Switch } from 'react-router-dom';
 import App from './app';
 import RepoShowPage from './repo_show/repo_show_page';
 
+
 const Root = ({ store }) => (
-
   <Provider store={ store }>
-
-    <HashRouter>
-      <div>
-
-        <Route path="/" component={App} />
-      </div>
-    </HashRouter>
-
+    <HashRouter><Route path="/" component={App} /></HashRouter>
   </Provider>
-
 );
+
 
 export default Root;

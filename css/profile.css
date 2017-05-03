@@ -1,4 +1,4 @@
-div.profile-main, div.repo-show-main {
+div.profile-main, div.repo-show div.main {
   width: 57%;
   margin: 0 auto;
   background: white;

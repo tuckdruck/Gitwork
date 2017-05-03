@@ -23,7 +23,9 @@ export default class IssueTitle extends React.Component {
   }
 
   toggleEditTitle() {
-    this.setState({ edit: !this.state.edit });
+    this.setState(
+      { edit: !this.state.edit, title: this.props.issue.title }
+    );
   }
 
   issueTitleForm() {

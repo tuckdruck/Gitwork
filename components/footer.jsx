@@ -5,7 +5,7 @@ const Footer = () => {
     <footer>
       <nav>
         <span>© 2017 Gitwork, Inc.</span>
-        <img className="footer" src="images/inverted-cat.png" alt="gitwork-logo"/>
+        <img src="images/inverted-cat.png" alt="gitwork-logo" />
         <span>Avital Drucker</span>
       </nav>
     </footer>

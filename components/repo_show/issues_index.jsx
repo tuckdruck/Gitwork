@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchIssues, receiveIssues } from '../../actions/issue_actions';
 import issuesArray from '../../selectors/issues_selector';
 import IssueIndexItem from './issue_index_item';
+import NewIssue from './new_issue';
 
 
 class IssuesIndex extends React.Component {
@@ -19,13 +20,20 @@ class IssuesIndex extends React.Component {
     this.props.fetchIssues(this.props.user, this.props.repo);
   }
 
-  render() {
-    const issues = this.props.issues.map((issue) => {
+  issueIndexItems() {
+    return this.props.issues.map((issue) => {
       return(<IssueIndexItem key={issue.id} issue={issue}/>);
     });
+  }
+
+  render() {
     return(
-      <div className="issues-index">
-        {issues}
+      <div>
+        <div className="issue-header">
+          <h2>Issues</h2>
+          <NewIssue repo={this.props.repo}/>
+        </div>
+        <div className="issues-index">{this.issueIndexItems()}</div>
       </div>
     );
   }

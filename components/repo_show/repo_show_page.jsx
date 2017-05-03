@@ -12,38 +12,38 @@ import RepoHeader from './repo_header';
 import RepoStats from '../repo_stats';
 
 
-const RepoShowPage = ({ user, repo, logInUser, fetchRepos }) => {
-  if (!user) { return(<Redirect to="/" />); }
+class RepoShowPage extends React.Component {
 
-  if (!user.login) {
-    logInUser(user).then(() => (fetchRepos(user));
+  constructor(props) {
+    super(props);
   }
 
-  if (repo) {
-    return(
-      <div>
-          <div className="repo-show-wide">
-            <div className="repo-show-header">
-              <RepoHeader username={user.login} repoName={repo.name}/>
-              <RepoStats repo={repo}/>
-            </div>
-          </div>
-        <div className="repo-show-main">
+  componentWillMount() {
+    if (this.props.user && !this.props.user.login) {
+      this.props.logInUser(this.props.user)
+        .then(() => (this.props.fetchRepos(this.props.user)));
+    }
+  }
 
-          <div className="repo-description">
-            <p>{repo.description}</p>
-            <div className="issue-header">
-              <h2>Issues</h2>
-              <NewIssue repo={repo}/>
-            </div>
-            <IssuesIndex repo={repo}/>
-          </div>
+  repoDescription() {
+    return(<p>{this.props.repo.description}</p>);
+  }
+
+  render() {
+    const { user, repo } = this.props;
+
+    if (!user) { return(<Redirect to="/" />); }
+    if (!repo) { return(<div></div>); }
+
+    return(
+      <div className="repo-show">
+        <RepoHeader user={user} repo={repo}/>
+        <div className="main">
+          {this.repoDescription()}<IssuesIndex repo={repo}/>
         </div>
-        <Footer />
       </div>
     );
   }
-  else { return (<div></div>); }
 
 }
 

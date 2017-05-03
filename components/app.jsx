@@ -1,37 +1,42 @@
-import React from 'react';
-import Header from './header';
-import ProfilePage from './profile/profile_page';
-import SignIn from './sign_in';
-import Footer from './footer';
-import RepoShowPage from './repo_show/repo_show_page';
-
 import { logIn } from '../actions/session_actions';
+
 import { connect } from 'react-redux';
 import { Route, browserHistory, Redirect } from 'react-router-dom';
+import React from 'react';
 
-const App = ({ children, loggedIn, location, user, logInUser }) => {
-  if (loggedIn && location.pathname === "/") {
+import Header from './header';
+import Footer from './footer';
+
+import ProfilePage from './profile/profile_page';
+import SignInPage from './sign_in_page';
+import RepoShowPage from './repo_show/repo_show_page';
+
+
+const App = ({ loggedIn, location }) => {
+  if (loggedIn) {
     return(
       <div>
-      <Header />
-      <ProfilePage />
+        <Header />
+        <Route path="/repos/:repoId" component={RepoShowPage} />
+        <Route exact path="/" component={ProfilePage} />
+        <Footer />
       </div>
     );
   }
-  else if (loggedIn) {
+
+  if (location.pathname === "/") {
     return(
-      <div>
-      <Header />
-      <Route path="/repos/:repoId" component={RepoShowPage} />
-      </div>
+      <main className="landing-container">
+        <Header />
+        <SignInPage />
+      </main>
     );
-  }
-  else if (!loggedIn && location.pathname !== "/"){
+  } else {
     return(<Redirect to="/" />);
   }
-
-  return(<SignIn />);
+  // return (location.pathname === "/") ? <SignInPage /> : <Redirect to="/" />;
 };
+
 
 const mapStateToProps = (state) => {
   return {
@@ -40,10 +45,12 @@ const mapStateToProps = (state) => {
   };
 };
 
+
 const mapDispatchToProps = (dispatch) => {
   return {
     logInUser: (user) => { return dispatch(logIn(user)); }
   };
 };
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

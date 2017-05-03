@@ -27,7 +27,7 @@ class NewIssueForm extends React.Component {
   render() {
     return(
       <div>
-        <RepoHeader username={this.props.user.login} repoName={this.props.repo.name} />
+        <RepoHeader user={this.props.user} repo={this.props.repo} />
         <section className="new-form-container">
           <img className="avatar-small" src={this.props.user.avatar_url} alt="avatar" />
           <form className="new-issue">
