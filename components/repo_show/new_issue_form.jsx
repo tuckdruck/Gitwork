@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createIssue } from '../../actions/issue_actions';
 import RepoHeader from './repo_header';
+import ReactDOM from 'react-dom';
 
 class NewIssueForm extends React.Component {
 
@@ -10,6 +11,24 @@ class NewIssueForm extends React.Component {
     this.state = { title: "", body: "" };
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentWillMount() {
+    document.addEventListener('click', this.handleClick, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleClick, false);
+  }
+
+  handleClick(e) {
+    const modal = ReactDOM.findDOMNode(this);
+    const outsideModal = !modal.contains(e.target);
+
+    if (outsideModal) {
+      this.props.closeModal();
+    }
   }
 
   update(type) {
@@ -26,7 +45,7 @@ class NewIssueForm extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="modal">
         <RepoHeader user={this.props.user} repo={this.props.repo} />
         <section className="new-form-container">
           <img className="avatar-small" src={this.props.user.avatar_url} alt="avatar" />

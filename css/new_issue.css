@@ -22,3 +22,42 @@ form.new-issue textarea {
   vertical-align: top;
   margin-bottom: 15px;
 }
+
+div.modal {
+  position: fixed;
+  z-index: 1000;
+  background: white;
+  width: 50%;
+  padding: 0px 50px 50px 50px;
+  left: 22%;
+  top: 17%;
+  border-radius: 15px;
+}
+
+div.modal div.wide {
+  padding: 0px;
+  padding-top: 50px;
+  background: white;
+}
+
+div.modal div.wide div span {
+  font-size: 13px;
+}
+
+div.modal section {
+  width: 100%;
+}
+
+div.modal input {
+  font-size: 14px;
+}
+
+div.modal-screen {
+  min-height: 100%;
+  min-width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: 0;
+  z-index: 999;
+  position: fixed;
+}

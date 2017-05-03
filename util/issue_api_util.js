@@ -1,4 +1,3 @@
-import 'whatwg-fetch'
 
 
 const rootUrl = (username) => {
