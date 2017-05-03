@@ -1,13 +1,14 @@
 import React from 'react';
-import Header from './header';
+import Header from '../header';
 import IssuesIndex from './issues_index';
 import { connect } from 'react-redux';
 import IssueModal from './issue_modal';
 import { Redirect } from 'react-router-dom';
-import { logIn } from '../actions/session_actions';
-import { fetchRepos } from '../actions/repo_actions';
-import Footer from './footer';
+import { logIn } from '../../actions/session_actions';
+import { fetchRepos } from '../../actions/repo_actions';
+import Footer from '../footer';
 import RepoHeader from './repo_header';
+import RepoStats from '../repo_stats';
 
 const RepoShowPage = (props) => {
   if (!props.user) {
@@ -26,12 +27,10 @@ const RepoShowPage = (props) => {
 
   return(
     <div>
-      <Header />
         <div className="repo-show-wide">
           <div className="repo-show-header">
             <RepoHeader username={props.user.login} repoName={props.repo.name}/>
-            <span className="language">{props.repo.language}</span>
-             <i className="fa fa-star" aria-hidden="true"></i> {props.repo.stargazers_count}
+            <RepoStats repo={props.repo}/>
           </div>
         </div>
       <div className="repo-show-main">

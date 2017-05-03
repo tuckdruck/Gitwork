@@ -34,7 +34,7 @@ const parseUser = (json, input) => {
   return userInfo;
 }
 
-logInError = () => {
+const logInError = () => {
   return new Error("Invalid username/API token combination.");
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createIssue } from '../actions/issue_actions';
+import { createIssue } from '../../actions/issue_actions';
 import RepoHeader from './repo_header';
 
 class NewIssueForm extends React.Component {

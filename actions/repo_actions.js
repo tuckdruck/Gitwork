@@ -14,7 +14,7 @@ export const fetchRepos = user => {
       .then((res) => (res.text()))
       .then((json) => {
         const repos = JSON.parse(json);
-        return dispatch(receiveRepos(reposObj));
+        return dispatch(receiveRepos(repos));
       });
   };
 };

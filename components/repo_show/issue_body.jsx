@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateIssue } from '../actions/issue_actions';
+import { updateIssue } from '../../actions/issue_actions';
 import StatusIcon from './status_icon';
 
 class IssueBody extends React.Component {

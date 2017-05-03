@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { logIn } from '../actions/session_actions';
+import { logIn } from '../../actions/session_actions';
 
 import ReposIndex from './repos_index';
 import Header from '../header';
@@ -14,14 +14,12 @@ const ProfilePage = ({ user, logInUser }) => {
     return(<div></div>);
   }
   return(
-    <div>
-      <Header />
-      <div className="profile-main">
-        <ProfileSidebar user={user}/><ReposIndex />
-      </div>
+    <div className="profile-main">
+      <ProfileSidebar user={user}/><ReposIndex />
     </div>
   );
 }
+
 
 const mapStateToProps = state => {
   return {
@@ -29,10 +27,14 @@ const mapStateToProps = state => {
   };
 };
 
+
 const mapDispatchToProps = dispatch => {
   return {
     logInUser: (user) => { return dispatch(logIn(user)); }
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage);
+
+export default connect(
+  mapStateToProps, mapDispatchToProps
+)(ProfilePage);

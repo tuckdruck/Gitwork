@@ -78,6 +78,12 @@ div.repo-thumb {
   box-sizing: border-box;
 }
 
+div.repo-thumb p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 div.repos-row div.repo-thumb:last-child {
   margin-right: 0;
 }

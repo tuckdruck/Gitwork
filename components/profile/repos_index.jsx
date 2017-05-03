@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchRepos } from '../actions/repo_actions';
-import reposArray from '../selectors/repos_selector';
+import { fetchRepos } from '../../actions/repo_actions';
+import reposArray from '../../selectors/repos_selector';
 import RepoIndexItem from './repo_index_item';
 
 class ReposIndex extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchIssues, receiveIssues } from '../actions/issue_actions';
-import issuesArray from '../selectors/issues_selector';
+import { fetchIssues, receiveIssues } from '../../actions/issue_actions';
+import issuesArray from '../../selectors/issues_selector';
 import IssueIndexItem from './issue_index_item';
 
 
