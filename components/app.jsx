@@ -34,7 +34,6 @@ const App = ({ loggedIn, location }) => {
   } else {
     return(<Redirect to="/" />);
   }
-  // return (location.pathname === "/") ? <SignInPage /> : <Redirect to="/" />;
 };
 
 

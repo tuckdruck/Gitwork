@@ -24,19 +24,50 @@ class SignInForm extends React.Component {
     this.props.logIn(this.state);
   }
 
+  tokenInfo() {
+    return(
+      <span>
+        Click&nbsp;
+        <a href="https://github.com/blog/1509-personal-api-tokens">
+          here
+        </a>&nbsp;
+        to find out how to generate a personal API token.
+      </span>
+    );
+  }
+
+  usernameInput() {
+    return(
+      <label >
+        <input
+          placeholder="Username"
+          type="text" value={this.state.username}
+          onChange={this.update("username")}
+      />
+      </label>
+    );
+  }
+
+  tokenInput() {
+    return(
+      <label>
+        <input
+          placeholder="Personal API token"
+          type="password"
+          value={this.state.token}
+          onChange={this.update("token")}
+        />
+      </label>
+    );
+  }
+
   render() {
     return(
       <form onSubmit={this.handleSubmit}>
-        <label >
-          <input placeholder="Username" type="text" value={this.state.username} onChange={this.update("username")} />
-        </label>
-
-        <label>
-          <input placeholder="Personal API token" type="password" value={this.state.token} onChange={this.update("token")}/>
-        </label>
-
+        {this.usernameInput()}
+        {this.tokenInput()}
         <button className="login">Sign In</button>
-        <span>Click <a href="https://github.com/blog/1509-personal-api-tokens">here</a> to find out how to generate a personal API token.</span>
+        {this.tokenInfo()}
       </form>
     );
   }
