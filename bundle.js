@@ -12835,6 +12835,8 @@ var App = function App(_ref) {
       _react2.default.createElement(_header2.default, null),
       _react2.default.createElement(_sign_in_page2.default, null)
     );
+  } else {
+    return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
   }
 };
 
