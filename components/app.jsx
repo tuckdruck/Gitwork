@@ -30,7 +30,7 @@ const App = ({ loggedIn, location }) => {
         <SignInPage />
       </main>
     );
-  } else { return(<Redirect to="/" />)}
+  } else { return(<Redirect to="/" />); }
 };
 
 
