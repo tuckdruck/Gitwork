@@ -35,4 +35,4 @@ export default combineReducers({
 });
 ```
 
-The session slice of state contains a user object or is null. It also includes an array (initially empty) of login errors.
+The session slice of state contains a key of "user", which points to null or an object with user information. The session slice of state also includes an array (initially empty) of login errors.
