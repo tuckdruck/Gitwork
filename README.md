@@ -1,6 +1,9 @@
 # Gitwork
 
-Gitwork is an application for accessing your Github profile information and repositories, and managing your repositories' issues. Its styling is inspired by Github.
+
+[Gitwork][live] is an application for accessing your Github profile information and repositories, and managing your repositories' issues. Its styling is inspired by Github.
+
+[live]: http://avitaldrucker.com/Gitwork/
 
 ## Instructions on How to Run Locally
 1. Open up the Gitwork directory in your terminal.
