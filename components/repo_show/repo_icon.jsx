@@ -13,6 +13,6 @@ const RepoIcon = () => {
                 </g>
             </svg>
   );
-}
+};
 
 export default RepoIcon;

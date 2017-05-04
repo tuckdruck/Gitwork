@@ -34,8 +34,8 @@ export default class IssueModal extends React.Component {
     let modal = "";
     let modalScreen = "";
     if (this.state.modalOpen) {
-      modal = (<NewIssueForm closeModal={this.closeModal} repo={this.props.repo}/>)
-      modalScreen = (<div className="modal-screen"></div>)
+      modal = (<NewIssueForm closeModal={this.closeModal} repo={this.props.repo}/>);
+      modalScreen = (<div className="modal-screen"></div>);
     }
 
     return(

@@ -15,6 +15,6 @@ const ProfileSidebar = ({ user }) => (
     <p>{user.bio}</p>
     {location(user)}
   </section>
-)
+);
 
 export default ProfileSidebar;

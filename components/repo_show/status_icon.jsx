@@ -37,7 +37,6 @@ const ClosedIcon = () => {
 const StatusIcon = (state) => {
   if (state.status === "open") { return OpenIcon(); }
   else { return ClosedIcon(); }
-  // state.status === "open" ? (return OpenIcon()) : (return ClosedIcon());
-}
+};
 
 export default StatusIcon;

@@ -5,7 +5,7 @@ import SignInForm from './sign_in_form';
 
 const gitworkText = `Gitwork is an application for accessing your
 Github profile information and repositories, and managing your
-issues. It is built on top of the Github API.`
+issues. It is built on top of the Github API.`;
 
 
 const gitworkDescription = () => {
@@ -15,7 +15,7 @@ const gitworkDescription = () => {
       <p>{gitworkText}</p>
     </div>
   );
-}
+};
 
 
 const SignInPage = ({ errors }) => {

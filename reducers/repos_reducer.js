@@ -7,11 +7,11 @@ const ReposReducer = (state = defaultState, action) => {
   switch(action.type) {
     case RECEIVE_REPOS:
       const reposObj = {};
-      action.repos.forEach((repo) => { reposObj[repo.id] = repo; })
+      action.repos.forEach((repo) => { reposObj[repo.id] = repo; });
       return reposObj;
     default:
       return state;
   }
-}
+};
 
 export default ReposReducer;

@@ -18,7 +18,7 @@ const ProfilePage = ({ user, logInUser }) => {
       <ProfileSidebar user={user}/><ReposIndex />
     </div>
   );
-}
+};
 
 
 const mapStateToProps = state => {
@@ -31,8 +31,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     logInUser: (user) => { return dispatch(logIn(user)); }
-  }
-}
+  };
+};
 
 
 export default connect(

@@ -13,6 +13,6 @@ const RepoHeader = ({ user, repo }) => {
       <RepoStats repo={repo}/>
     </div>
   );
-}
+};
 
 export default RepoHeader;

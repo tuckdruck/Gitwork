@@ -1,5 +1,3 @@
-
-
 export const logIn = (user) => {
   const headers = {
     'Authorization': `Basic ${user.token}`

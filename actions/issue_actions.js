@@ -52,6 +52,6 @@ export const createIssue = (user, issue, repo) => {
       .then((json) => {
         const createdIssue = JSON.parse(json);
         return dispatch(receiveIssue(createdIssue));
-      })
-  }
+      });
+  };
 };

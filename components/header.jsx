@@ -21,7 +21,7 @@ const Header = ({ logOut, loggedIn }) => {
       </nav>
     </header>
   );
-}
+};
 
 
 const mapStateToProps = state => {

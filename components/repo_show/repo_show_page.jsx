@@ -53,8 +53,8 @@ const mapStateToProps = (state, ownProps) => {
     user: state.session.user,
     repo: state.repos[repoId],
     repos: state.repos
-  }
-}
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {

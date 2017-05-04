@@ -7,7 +7,7 @@ const rootUrl = (username) => {
 
 const headers = (token) => {
   return { 'Authorization': `Basic ${token}` };
-}
+};
 
 
 export const fetchIssues = (user, repo) => {
@@ -33,7 +33,7 @@ export const updateIssue = (user, issue, params) => {
 
 
 export const createIssue = (user, issue, repo) => {
-  const url = `${rootUrl(user.login)}${repo.name}/issues`
+  const url = `${rootUrl(user.login)}${repo.name}/issues`;
 
   return fetch(url, {
     method: "POST",

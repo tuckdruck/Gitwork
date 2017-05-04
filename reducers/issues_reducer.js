@@ -11,7 +11,7 @@ const IssuesReducer = (state = defaultState, action) => {
       newState = {};
       action.issues.forEach((issue) => {
         newState[issue.id] = issue;
-      })
+      });
       return newState;
     case RECEIVE_ISSUE:
       newState = Object.assign({}, state);
@@ -20,6 +20,6 @@ const IssuesReducer = (state = defaultState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default IssuesReducer;

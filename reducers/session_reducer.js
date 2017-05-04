@@ -26,6 +26,6 @@ const SessionReducer = (state = defaultState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default SessionReducer;

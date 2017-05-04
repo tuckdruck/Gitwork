@@ -7,7 +7,7 @@ export const receiveUser = (user) => {
   return {
     type: RECEIVE_USER,
     user: user
-  }
+  };
 };
 
 
@@ -15,8 +15,8 @@ export const receiveErrors = (errors) => {
   return {
     type: RECEIVE_ERRORS,
     errors: errors
-  }
-}
+  };
+};
 
 
 export const logOut = () => {
@@ -25,18 +25,18 @@ export const logOut = () => {
   return {
     type: RECEIVE_USER,
     user: null
-  }
-}
+  };
+};
 
 const parseUser = (json, input) => {
   const userInfo = JSON.parse(json);
   userInfo["token"] = input.token;
   return userInfo;
-}
+};
 
 const logInError = () => {
   return new Error("Invalid username/API token combination.");
-}
+};
 
 
 export const logIn = (user) => {
