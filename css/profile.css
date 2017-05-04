@@ -105,3 +105,7 @@ span.repo-thumb.language, span.language {
 i.fa-star {
   color: rgb(88, 96, 105);
 }
+
+div.repo-row {
+  display: flex;
+}

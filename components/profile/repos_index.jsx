@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchRepos } from '../../actions/repo_actions';
 import reposArray from '../../selectors/repos_selector';
-
-import ReposRow from './repos_row';
+import RepoIndexItem from './repo_index_item';
 
 
 class ReposIndex extends React.Component {
@@ -18,9 +17,19 @@ class ReposIndex extends React.Component {
   }
 
   repoRows() {
-    return this.props.repos.map((repo) => {
-      return(<RepoIndexItem key={repo.id} repo={repo} />);
-    });
+    const rows = [];
+
+    for (let i = 0; i < this.props.repos.length; i += 2) {
+      const leftRepo = this.props.repos[i];
+      const rightRepo = this.props.repos[i + 1];
+      rows.push(
+        <div key={i} className="repo-row">
+          <RepoIndexItem key={i} repo={leftRepo} />
+          <RepoIndexItem key={i + 1} repo={rightRepo} />
+        </div>
+      );
+    }
+    return rows;
   }
 
   render() {
