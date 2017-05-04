@@ -1,7 +1,7 @@
 
 
 const rootUrl = (username) => {
-  return "https://api.github.com/repos/" + username + "/";
+  return `https://api.github.com/repos/${username}/`;
 };
 
 

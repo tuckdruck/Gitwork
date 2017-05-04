@@ -81,7 +81,7 @@ export default class IssueDetails extends React.Component {
       this.props.user, this.props.issue, { [type]: value }
     );
 
-    this.setState({ ["edit" + capitalize(type)]: false });
+    this.setState({ [`edit${capitalize(type)}`]: false });
   }
 
 

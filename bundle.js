@@ -13435,7 +13435,7 @@ var IssueDetails = function (_React$Component) {
 
       this.props.updateIssue(this.props.user, this.props.issue, _defineProperty({}, type, value));
 
-      this.setState(_defineProperty({}, "edit" + (0, _capitalize2.default)(type), false));
+      this.setState(_defineProperty({}, 'edit' + (0, _capitalize2.default)(type), false));
     }
   }, {
     key: 'date',
@@ -14463,7 +14463,7 @@ Object.defineProperty(exports, "__esModule", {
 var reposFormatter = function reposFormatter(repos) {
   var arr = [];
   Object.keys(repos).forEach(function (id) {
-    arr.unshift(repos[id]);
+    arr.push(repos[id]);
   });
   return arr;
 };
@@ -14481,7 +14481,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var capitalize = function capitalize(word) {
-  return word[0].toUpperCase() + word.slice(1, word.length);
+  return "" + word[0].toUpperCase() + word.slice(1, word.length);
 };
 
 exports.default = capitalize;
@@ -14547,9 +14547,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var fetchRepos = exports.fetchRepos = function fetchRepos(user) {
-  var headers = { 'Authorization': 'Basic ' + ('' + user.token) };
+  var headers = { 'Authorization': "Basic " + user.token };
 
-  var url = 'https://api.github.com/user/repos?type=owner&sort=updated&order=asc';
+  var url = "https://api.github.com/user/repos?type=owner&sort=updated&order=desc";
 
   return fetch(url, {
     headers: headers,
@@ -14569,13 +14569,12 @@ Object.defineProperty(exports, "__esModule", {
 });
 var logIn = exports.logIn = function logIn(user) {
   var headers = {
-    'Authorization': 'Basic ' + ('' + user.token)
+    'Authorization': 'Basic ' + user.token
   };
 
   var url = 'https://api.github.com/users/' + user.username;
   return fetch(url, {
-    headers: headers,
-    cache: "no-store"
+    headers: headers
   });
 };
 

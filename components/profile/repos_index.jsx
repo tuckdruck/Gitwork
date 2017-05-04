@@ -18,14 +18,9 @@ class ReposIndex extends React.Component {
   }
 
   repoRows() {
-    const { repos } = this.props;
-    const repoRows = [];
-
-    for (let i = 0; i < repos.length; i += 2) {
-      repoRows.push(<ReposRow key={i} repos={repos.slice(i, i + 2)} />);
-    }
-
-    return repoRows;
+    return this.props.repos.map((repo) => {
+      return(<RepoIndexItem key={repo.id} repo={repo} />);
+    });
   }
 
   render() {

@@ -23,31 +23,27 @@ const App = ({ loggedIn, location }) => {
       </div>
     );
   }
-
-  if (location.pathname === "/") {
+  else if (location.pathname === "/") {
     return(
       <main className="landing-container">
         <Header />
         <SignInPage />
       </main>
     );
-  } else {
-    return(<Redirect to="/" />);
   }
 };
 
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ session }) => {
   return {
-    loggedIn: !!state.session.user,
-    user: state.session.user
+    loggedIn: !!session.user
   };
 };
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    logInUser: (user) => { return dispatch(logIn(user)); }
+    logInUser: (user) => (dispatch(logIn(user)))
   };
 };
 

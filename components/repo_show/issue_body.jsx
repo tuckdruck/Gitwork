@@ -57,7 +57,9 @@ export default class IssueBody extends React.Component {
   }
 
   bodyText() {
-    if (this.state.edit) { return this.bodyForm(); }
+    if (this.state.edit) {
+      return this.bodyForm();
+    }
     else {
       return(
         <div className="issue-body closed">{this.props.issue.body}</div>
